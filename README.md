@@ -5,7 +5,7 @@ Library to manage Mobile Devices hosted in the SeeTest Cloud.
 ### Prerequisites
 
 ```
-A .NetStandard v2.0 / .NetFramework v4.6.1 project
+A .NetStandard v2.0/ .NETCore v2.0 / .NetFramework v4.6.1 project
 ```
 
 ### Installing
