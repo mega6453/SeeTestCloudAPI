@@ -23,7 +23,7 @@ using SeeTestCloudAPI;
 ```
 Create a new instance of CloudAPIClient with the SeeTest Cloud server URL and credentials(Token / Username & Password)
 ```
-CloudAPIClient client = new CloudAPIClient("https://cloud.seetest.io", "APIToken");
+CloudAPIClient client = new CloudAPIClient("CloudServerURL", "APIToken");
 ```
 Use the created instance to call the available methods.e.g.
 ```
