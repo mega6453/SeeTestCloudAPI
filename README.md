@@ -35,14 +35,14 @@ client.ReserveDevice(12345, "2020-07-13-16-30-00", "2020-07-13-16-30-00", "2020-
 ```
 AddDeviceTag()
 EditDevice()
-GetAllDevices()
-GetAvailableDeviceNames()
-GetDevice()
-GetDeviceID()
+GetAllDevices() (+ 3 overloads)
+GetAvailableDeviceNames() (+ 1 overload)
+GetDevice() (+ 2 overloads)
+GetDeviceID() (+ 1 overload)
 GetDeviceiOSConfigurationProfiles()
 GetDeviceReservations()
 GetDeviceTags()
-GetOnlineDeviceNames()
+GetOnlineDeviceNames() (+ 1 overload)
 PrintAllDevicesImportantInformation()
 RebootDevice()
 ReleaseDevice()
@@ -51,9 +51,9 @@ RemoveDeviceTag()
 ReserveDevice()
 ReserveMultipleDevices()
 ResetUSBConnection()
-StartWebControl()
+StartWebControl() (+ 1 overload)
 ```
-More methods will be added in the future versions.
+More methods will be added in the future releases.
 
 ## Built With
 
@@ -63,7 +63,7 @@ More methods will be added in the future versions.
 
 ## Authors
 
-* **Meganathan C** 
+* [**Meganathan C**](https://mega6453.carrd.co)
 
 ## License
 
