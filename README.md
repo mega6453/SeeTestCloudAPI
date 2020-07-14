@@ -67,4 +67,4 @@ More methods will be added in the future releases.
 
 ## License
 
-This project is licensed under the MIT License
+This project is licensed under the [MIT License](https://licenses.nuget.org/MIT)
