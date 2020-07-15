@@ -37,7 +37,7 @@ e.g. CloudAPIClient client = new CloudAPIClient("https://xxxxx.com", "xxxxxxxxxx
 Use the created instance to call the available methods.
 ```
 e.g.
-client.GetAvailableDevicesName();
+client.GetAvailableDevicesNames();
 client.PrintAllDevicesImportantInformation();
 client.ReserveDevice(12345, "2020-07-13-16-30-00", "2020-07-13-16-30-00", "2020-07-13-16-50-00");
 ```
@@ -46,13 +46,13 @@ client.ReserveDevice(12345, "2020-07-13-16-30-00", "2020-07-13-16-30-00", "2020-
 AddDeviceTag()
 EditDevice()
 GetAllDevices() (+ 3 overloads)
-GetAvailableDevicesName() (+ 1 overload)
+GetAvailableDevicesNames() (+ 1 overload)
 GetDevice() (+ 2 overloads)
 GetDeviceID() (+ 1 overload)
 GetDeviceiOSConfigurationProfiles()
 GetDeviceReservations()
 GetDeviceTags()
-GetOnlineDevicesName() (+ 1 overload)
+GetOnlineDevicesNames() (+ 1 overload)
 PrintAllDevicesImportantInformation()
 RebootDevice()
 ReleaseDevice()
