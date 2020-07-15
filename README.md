@@ -1,4 +1,4 @@
-# SeeTest Cloud API <img src="https://user-images.githubusercontent.com/50325649/87389535-855dcb80-c5c4-11ea-9abc-c24e9253d229.png" width="25" height="25" title="SeeTestCloud" alt="SeeTestCloud">
+# SeeTestCloudAPI <img src="https://user-images.githubusercontent.com/50325649/87389535-855dcb80-c5c4-11ea-9abc-c24e9253d229.png" width="25" height="25" title="SeeTestCloud" alt="SeeTestCloud">
 
 Library to manage Mobile Devices hosted in the SeeTest Cloud.
 
@@ -6,13 +6,15 @@ Library to manage Mobile Devices hosted in the SeeTest Cloud.
 
 ```
 A .NetStandard v2.0/ .NETCore v2.0 / .NetFramework v4.6.1 project
+
 SeeTestCloud Access
 ```
 
 ### Installing
 
 ```
-Right Click on your project in the visual studio solution explorer->Manage nuget packages-> Search for SeeTestCloudAPI -> Select project -> Install.
+Right Click on your project in the visual studio solution explorer->Manage nuget packages-> Search for SeeTestCloudAPI -> Select SeeTestCloudAPI By Meganathan from the list -> Select project -> Install.
+
 Gathering dependency information may take a minute or more.
 ```
 
@@ -24,10 +26,17 @@ using SeeTestCloudAPI;
 ```
 Create a new instance of CloudAPIClient with the SeeTest Cloud server URL and credentials(Token / Username & Password)
 ```
-CloudAPIClient client = new CloudAPIClient("CloudServerURL", "APIToken");
+CloudAPIClient client = new CloudAPIClient("CloudServerURL", "AccessToken");
+
+CloudServerURL = The URL where the SeeTestCloud server is configured.
+AccessToken = Login to SeeTestCloud->User Icon->Get Access Key->Copy.
+
+e.g. CloudAPIClient client = new CloudAPIClient("https://xxxxx.com", "xxxxxxxxxxx");
+
 ```
 Use the created instance to call the available methods.e.g.
 ```
+e.g.
 client.GetAvailableDeviceNames();
 client.PrintAllDevicesImportantInformation();
 client.ReserveDevice(12345, "2020-07-13-16-30-00", "2020-07-13-16-30-00", "2020-07-13-16-50-00");
