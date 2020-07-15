@@ -34,7 +34,7 @@ AccessToken = Login to SeeTestCloud->User Icon->Get Access Key->Copy.
 e.g. CloudAPIClient client = new CloudAPIClient("https://xxxxx.com", "xxxxxxxxxxx");
 
 ```
-Use the created instance to call the available methods.e.g.
+Use the created instance to call the available methods.
 ```
 e.g.
 client.GetAvailableDeviceNames();
