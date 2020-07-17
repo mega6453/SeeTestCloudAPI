@@ -41,12 +41,32 @@ client.GetAvailableDevicesNames();
 client.PrintAllDevicesImportantInformation();
 client.ReserveDevice(12345, "2020-07-13-16-30-00", "2020-07-13-16-30-00", "2020-07-13-16-50-00");
 ```
+To use Device specific methods, Device ID(Assigned by SeeTestCloud) is required. Use GetDeviceID() method to get the Device ID.
+```
+string DeviceID = client.GetDeviceID(string UDID) // UDID for iOS device; Serial number for Android device.
+
+OR
+
+Dictionary<Keys, string> SearchQuery = new Dictionary<Keys, string>();
+SearchQuery.Add(Keys.agentLocation, "Bangalore");
+SearchQuery.Add(Keys.deviceOs, "android");
+SearchQuery.Add(Keys.displayStatus, "available");
+SearchQuery.Add(Keys.model, "Nexus 5X");
+string DeviceID = client.GetDeviceID(SearchQuery)
+
+OR 
+
+Use PrintAllDevicesImportantInformation() method - Prints all the devices Location,DeviceName,DeviceOS,OSVersion,CurrentStatus and UDID details in the console. 
+```
+
+
 ## Available Methods
 ```
 AddDeviceTag()
 EditDevice()
 GetAllDevices() (+ 3 overloads)
 GetAvailableDevicesNames() (+ 1 overload)
+GetAvailableDevicesNamesWithDetails() (+ 1 overload)
 GetDevice() (+ 2 overloads)
 GetDeviceID() (+ 1 overload)
 GetDeviceiOSConfigurationProfiles()
