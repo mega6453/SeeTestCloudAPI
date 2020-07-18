@@ -57,12 +57,12 @@ int DeviceID = client.GetDeviceID(SearchQuery);
 
 OR 
 
-// Use below method to print all the devices Location,DeviceName,DeviceOS,OSVersion,CurrentStatus and UDID details in the console. 
+// Use below method to print all the device's Location,DeviceName,DeviceOS,OSVersion,CurrentStatus,DeviceID and UDID details in the console.
 client.PrintAllDevicesImportantInformation(); 
 ```
 Use the Device ID in the Device specific methods.
 ```
-e.g. int DeviceID = 12345;
+e.g. 
 client.ReserveDevice(DeviceID, "2020-07-13-16-30-00", "2020-07-13-16-30-00", "2020-07-13-16-50-00"); // Will Reserve the device and will return the response as string.
 ```
 
