@@ -42,25 +42,28 @@ client.PrintAllDevicesImportantInformation();
 ```
 To use Device specific methods, Device ID(Assigned by SeeTestCloud) is required. Use GetDeviceID() method to get the Device ID.
 ```
-int DeviceID = client.GetDeviceID(string UDID) // UDID for iOS device; Serial number for Android device.
+// Use UDID of a Device to get Device ID.
+int DeviceID = client.GetDeviceID(string UDID); // iOS - UDID; Android - Serial number.
 
 OR
 
-Dictionary<Keys, string> SearchQuery = new Dictionary<Keys, string>(); // Keys is a enum which will have all the keys. So, just need to type "Keys." -> will list out all the keys.
-SearchQuery.Add(Keys.agentLocation, "Bangalore");  
+// Use Queries to filter the device and Get Device ID.
+Dictionary<Keys, string> SearchQuery = new Dictionary<Keys, string>(); 
+SearchQuery.Add(Keys.agentLocation, "Bangalore");  // Keys is a enum which will have all the keys. So, just need to type "Keys." -> will list out all the keys.
 SearchQuery.Add(Keys.deviceOs, "android");
 SearchQuery.Add(Keys.displayStatus, "available");
 SearchQuery.Add(Keys.model, "Nexus 5X");
-int DeviceID = client.GetDeviceID(SearchQuery) // Use Queries to filter the device and Get Device ID.
+int DeviceID = client.GetDeviceID(SearchQuery);
 
 OR 
 
-Use PrintAllDevicesImportantInformation() method - Prints all the devices Location,DeviceName,DeviceOS,OSVersion,CurrentStatus and UDID details in the console. 
+// Use below method to print all the devices Location,DeviceName,DeviceOS,OSVersion,CurrentStatus and UDID details in the console. 
+client.PrintAllDevicesImportantInformation(); 
 ```
 Use the Device ID in the Device specific methods.
 ```
-e.g.
-client.ReserveDevice(12345, "2020-07-13-16-30-00", "2020-07-13-16-30-00", "2020-07-13-16-50-00"); // Will Reserve the device and will return the response as string.
+e.g. int DeviceID = 12345;
+client.ReserveDevice(DeviceID, "2020-07-13-16-30-00", "2020-07-13-16-30-00", "2020-07-13-16-50-00"); // Will Reserve the device and will return the response as string.
 ```
 
 ## Available Methods
