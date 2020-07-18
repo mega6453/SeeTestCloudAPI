@@ -67,6 +67,7 @@ client.ReserveDevice(DeviceID, "2020-07-13-16-30-00", "2020-07-13-16-30-00", "20
 ```
 
 ## Available Methods
+No much information added here about the methods since all the methods are having description and parameter info which will be displayed while using the methods.
 ```
 AddDeviceTag()
 EditDevice()
