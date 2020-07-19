@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SeeTestCloudAPI</id>
+    <version>1.0.0</version>
+    <authors>Meganathan</authors>
+    <owners>Meganathan</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>    
+    <icon>SeeTestCloudIcon.png</icon>
+    <iconUrl>https://user-images.githubusercontent.com/50325649/87389535-855dcb80-c5c4-11ea-9abc-c24e9253d229.png</iconUrl>
+    <title>SeeTest Cloud API</title>
+    <description>Library to Manage Mobile Devices hosted in SeeTest Cloud.</description>
+    <projectUrl>https://github.com/mega6453/SeeTestCloudAPI</projectUrl>
+    <releaseNotes>Initial Release - Devices Rest API Methods</releaseNotes>
+    <copyright>Copyright © Meganathan 2020</copyright>
+    <tags>seetest, seetestcloud, experitest, experitestcloud, automation, cloudautomation, mobileautomation</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5.2">
+        <dependency id="ConsoleTables" version="2.4.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
+        <dependency id="RestSharp" version="106.11.4" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="ConsoleTables" version="2.4.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.CSharp" version="4.7.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
+        <dependency id="RestSharp" version="106.11.4" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="SeeTestCloudIcon.png" target="\SeeTestCloudIcon.png"/>
+    <file src="C:\Users\mc\source\repos\My Libraries\SeeTestCloudAPI\SeeTestCloudAPI\bin\Release\net452\SeeTestCloudAPI.dll" target="lib\net452\SeeTestCloudAPI.dll" />
+    <file src="C:\Users\mc\source\repos\My Libraries\SeeTestCloudAPI\SeeTestCloudAPI\bin\Release\net452\SeeTestCloudAPI.xml" target="lib\net452\SeeTestCloudAPI.xml" />
+    <file src="C:\Users\mc\source\repos\My Libraries\SeeTestCloudAPI\SeeTestCloudAPI\bin\Release\netstandard2.0\SeeTestCloudAPI.dll" target="lib\netstandard2.0\SeeTestCloudAPI.dll" />
+    <file src="C:\Users\mc\source\repos\My Libraries\SeeTestCloudAPI\SeeTestCloudAPI\bin\Release\netstandard2.0\SeeTestCloudAPI.xml" target="lib\netstandard2.0\SeeTestCloudAPI.xml" />
+  </files>
+</package>
