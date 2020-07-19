@@ -68,6 +68,9 @@ client.ReserveDevice(DeviceID, "2020-07-13-16-30-00", "2020-07-13-16-30-00", "20
 
 ## Available Methods
 No much information added here about the methods since all the methods are having description and parameter info which will be displayed while using the methods.
+
+<img src="https://user-images.githubusercontent.com/50325649/87870238-a9098300-c9c3-11ea-8202-4b8d34159425.png" width="820" height="80" title="MethodDesc" alt="MethodDesc">
+
 ```
 AddDeviceTag()
 EditDevice()
