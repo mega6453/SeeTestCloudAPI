@@ -34,7 +34,7 @@ namespace SeeTestCloudAPI
         /// SeeTest Cloud Server Address is required to find your server and SeeTest Cloud UserName and Password is required for authentication.
         /// </summary>
         /// <param name="SeeTestCloudServerAddress">Enter SeeTest Cloud Server address</param>
-        /// <param name="SeeTestCloudUserName">Enter valid Username registered with SeeTest Cloud->Copy</param>
+        /// <param name="SeeTestCloudUserName">Enter valid Username registered with SeeTest Cloud</param>
         /// <param name="SeeTestCloudPassword">Enter valid Password for the Username</param>
         public CloudAPIClient(string SeeTestCloudServerAddress, string SeeTestCloudUserName, string SeeTestCloudPassword)
         {
@@ -187,7 +187,7 @@ namespace SeeTestCloudAPI
         }
 
         /// <summary>
-        /// Prints all the device's(the user has access to) Location,DeviceName,DeviceOS,OSVersion,CurrentStatus,DeviceID and UDID details in the console. Use this method to see UDID of a device, helpful for GetDeviceID(string UDID).
+        /// Prints all the device's(the user has access to) Location,DeviceName,DeviceOS,OSVersion,CurrentStatus,DeviceID and UDID details in the console.
         /// Copy and paste the output into a text editor like Notepad.
         /// </summary>
         public void PrintAllDevicesImportantInformation()
@@ -481,7 +481,7 @@ namespace SeeTestCloudAPI
         }
 
         /// <summary>
-        /// This is NOT SeeTestCloudAPI method. Use this method to parse your "String" response and get the value. Note: The response should be in JSON format.e.g. {"status":"success"}
+        /// This is NOT SeeTestCloudAPI method. Use this method to parse your "string" response and get the value. Note: The response should be in JSON format.e.g. {"status":"success"}
         /// </summary>
         /// <param name="Response">Pass the response of a method. e.g. Return string of AddDeviceTag() method.</param>
         /// <param name="Key">Enter a key from the response. e.g. Response is {"status":"success"},Here Key is "status" and return value be "success".</param>

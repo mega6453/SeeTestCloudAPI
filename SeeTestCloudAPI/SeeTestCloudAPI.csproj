@@ -19,7 +19,7 @@
     <WarningLevel>4</WarningLevel>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants></DefineConstants>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net452|AnyCPU'">

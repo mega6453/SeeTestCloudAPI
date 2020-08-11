@@ -8,7 +8,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>    
     <icon>SeeTestCloudIcon.png</icon>
-    <iconUrl>https://user-images.githubusercontent.com/50325649/87389535-855dcb80-c5c4-11ea-9abc-c24e9253d229.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/mega6453/SeeTestCloudAPI/master/SeeTestCloudIcon.png</iconUrl>
     <title>SeeTest Cloud API</title>
     <description>Library to Manage Mobile Devices hosted in SeeTest Cloud.</description>
     <projectUrl>https://github.com/mega6453/SeeTestCloudAPI</projectUrl>
