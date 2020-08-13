@@ -1,4 +1,4 @@
-# SeeTestCloudAPI <img src="https://raw.githubusercontent.com/mega6453/SeeTestCloudAPI/master/SeeTestCloudIcon.png" width="25" height="25" title="SeeTestCloud" alt="SeeTestCloud">
+# SeeTestCloudAPI <img src="https://user-images.githubusercontent.com/50325649/89872924-49c01c80-dbd7-11ea-92e5-b9296c11e8d6.png" width="25" height="25" title="SeeTestCloud" alt="SeeTestCloud">
 
 A simple and easy library to manage Mobile Devices hosted in the SeeTest Cloud.
 
