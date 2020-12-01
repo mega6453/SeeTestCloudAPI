@@ -91,7 +91,7 @@ RemoveDeviceTag()
 ReserveDevice()
 ReserveMultipleDevices()
 ResetUSBConnection()
-StartWebControl() (+ 1 overload)
+StartWebControl() (+ 3 overloads) -  Added two new methods on 01-Dec-2020
 ```
 More methods will be added in the future releases.
 
