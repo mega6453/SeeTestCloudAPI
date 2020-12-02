@@ -75,13 +75,16 @@ No much information added here about the methods since all the methods are havin
 AddDeviceTag()
 EditDevice()
 GetAllDevices() (+ 3 overloads)
+GetAvailableDevicesIDs() (+ 1 overload) -  Added in v1.2.0
 GetAvailableDevicesNames() (+ 1 overload)
 GetAvailableDevicesNamesWithDetails() (+ 1 overload)
 GetDevice() (+ 2 overloads)
 GetDeviceID() (+ 1 overload)
+GetDeviceIDList() -  Added in v1.2.0
 GetDeviceiOSConfigurationProfiles()
 GetDeviceReservations()
 GetDeviceTags()
+GetOnlineDevicesIDs() (+ 1 overload) -  Added in v1.2.0
 GetOnlineDevicesNames() (+ 1 overload)
 PrintAllDevicesImportantInformation()
 RebootDevice()
@@ -91,7 +94,7 @@ RemoveDeviceTag()
 ReserveDevice()
 ReserveMultipleDevices()
 ResetUSBConnection()
-StartWebControl() (+ 3 overloads) -  Added two new methods on 01-Dec-2020
+StartWebControl() (+ 3 overloads) -  Added two new methods in v1.1.0
 ```
 More methods will be added in the future releases.
 
