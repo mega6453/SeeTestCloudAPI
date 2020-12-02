@@ -5,12 +5,13 @@
     <Authors>Meganathan</Authors>
     <Product>SeeTest Cloud API</Product>
     <Description>Library to manage Mobile Devices hosted in SeeTest Cloud.</Description>
-    <PackageReleaseNotes>Initial Release - Devices Rest API Methods</PackageReleaseNotes>
+    <PackageReleaseNotes>Added few more methods to Get Device IDs</PackageReleaseNotes>
     <PackageTags>seetest, seetestcloud, experitest, experitestcloud, automation, cloudautomation, mobileautomation</PackageTags>
     <Configurations>Release</Configurations>
     <PackageIconUrl>https://user-images.githubusercontent.com/50325649/87389535-855dcb80-c5c4-11ea-9abc-c24e9253d229.png</PackageIconUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>    
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.2.0</Version>    
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">

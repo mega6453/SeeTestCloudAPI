@@ -87,6 +87,52 @@ namespace SeeTestCloudAPI
         }
 
         /// <summary>
+        /// Returns a list of Devices IDs(the user has access to) which are currently Available. Location can be "all" OR a specific location(agent location). 
+        /// </summary>
+        /// <param name="Location">Enter "all" to get devices connected in all locations OR Enter a specific location.</param>
+        public List<int> GetAvailableDevicesIDs(string Location)
+        {
+            Dictionary<Keys, string> InputKeyValue = new Dictionary<Keys, string>();
+            InputKeyValue.Add(Keys.displayStatus, "available");
+            if (!Location.Equals("all", StringComparison.InvariantCultureIgnoreCase))
+            {
+                InputKeyValue.Add(Keys.agentLocation, Location);
+            }
+            List<string> deviceIDListString = new List<string>();
+            List<int> deviceIDsListInt = new List<int>();
+            deviceIDListString = GetAllDevices(InputKeyValue, Keys.id);
+            for (int i = 0; i < deviceIDListString.Count; i++)
+            {
+                deviceIDsListInt.Add(int.Parse(deviceIDListString[i]));
+            }
+            return deviceIDsListInt;
+        }
+
+        /// <summary>
+        /// Returns a list of Devices IDs(the user has access to) which are currently Available with the OS Type as a filter. Location can be "all" OR a specific location(agent location). 
+        /// </summary>
+        /// <param name="Location">Enter "all" to get devices connected in all locations OR Enter a specific location(agent location).</param>
+        /// <param name="OS">Type OSType. to display all the available options. e.g. OSType.iOS</param>
+        public List<int> GetAvailableDevicesIDs(string Location, OSType OS)
+        {
+            Dictionary<Keys, string> InputKeyValue = new Dictionary<Keys, string>();
+            InputKeyValue.Add(Keys.displayStatus, "available");
+            InputKeyValue.Add(Keys.deviceOs, OS.ToString());
+            if (!Location.Equals("all", StringComparison.InvariantCultureIgnoreCase))
+            {
+                InputKeyValue.Add(Keys.agentLocation, Location);
+            }
+            List<string> deviceIDListString = new List<string>();
+            List<int> deviceIDsListInt = new List<int>();
+            deviceIDListString = GetAllDevices(InputKeyValue, Keys.id);
+            for (int i = 0; i < deviceIDListString.Count; i++)
+            {
+                deviceIDsListInt.Add(int.Parse(deviceIDListString[i]));
+            }
+            return deviceIDsListInt;
+        }
+
+        /// <summary>
         /// Returns a list of Devices names(the user has access to) which are currently Available. Location can be "all" OR a specific location(agent location). 
         /// </summary>
         /// <param name="Location">Enter "all" to get devices connected in all locations OR Enter a specific location.</param>
@@ -152,6 +198,52 @@ namespace SeeTestCloudAPI
                 InputKeyValue.Add(Keys.agentLocation, Location);
             }
             return GetAvailableDevicesListValueFromAllDevicesByQuery(InputKeyValue);
+        }
+
+        /// <summary>
+        /// Returns a list of Devices IDs(the user has access to) which are currently Online(Currently connected to SeeTestCloud,But device status can be Available/In-Use). Location can be "all" OR a specific location(agent location). 
+        /// </summary>
+        /// <param name="Location">Enter "all" to get devices connected in all locations OR Enter a specific location(agent location).</param>
+        public List<int> GetOnlineDevicesIDs(string Location)
+        {
+            Dictionary<Keys, string> InputKeyValue = new Dictionary<Keys, string>();
+            InputKeyValue.Add(Keys.currentStatus, "online");
+            if (!Location.Equals("all", StringComparison.InvariantCultureIgnoreCase))
+            {
+                InputKeyValue.Add(Keys.agentLocation, Location);
+            }
+            List<string> deviceIDListString = new List<string>();
+            List<int> deviceIDsListInt = new List<int>();
+            deviceIDListString = GetAllDevices(InputKeyValue, Keys.id);
+            for (int i = 0; i < deviceIDListString.Count; i++)
+            {
+                deviceIDsListInt.Add(int.Parse(deviceIDListString[i]));
+            }
+            return deviceIDsListInt;
+        }
+
+        /// <summary>
+        /// Returns a list of Devices IDs(the user has access to) which are currently Online(Currently connected to SeeTestCloud,But device status can be Available/In-Use) with the OS Type as a filter. Location can be "all" OR a specific location(agent location). 
+        /// </summary>
+        /// <param name="Location">Enter "all" to get devices connected in all locations OR Enter a specific location(agent location).</param>
+        /// <param name="OS">Type OSType. to display all the available options. e.g. OSType.iOS</param>
+        public List<int> GetOnlineDevicesIDs(string Location, OSType OS)
+        {
+            Dictionary<Keys, string> InputKeyValue = new Dictionary<Keys, string>();
+            InputKeyValue.Add(Keys.currentStatus, "online");
+            InputKeyValue.Add(Keys.deviceOs, OS.ToString());
+            if (!Location.Equals("all", StringComparison.InvariantCultureIgnoreCase))
+            {
+                InputKeyValue.Add(Keys.agentLocation, Location);
+            }
+            List<string> deviceIDListString = new List<string>();
+            List<int> deviceIDsListInt = new List<int>();
+            deviceIDListString = GetAllDevices(InputKeyValue, Keys.id);
+            for (int i = 0; i < deviceIDListString.Count; i++)
+            {
+                deviceIDsListInt.Add(int.Parse(deviceIDListString[i]));
+            }
+            return deviceIDsListInt;
         }
 
         /// <summary>
@@ -275,6 +367,23 @@ namespace SeeTestCloudAPI
         {
             int deviceID = int.Parse(GetStringValueFromAllDevicesByQuery(SearchQuery, "id"));
             return deviceID;
+        }
+
+
+        /// <summary>
+        /// Returns list of Device IDs(integer) assigned by SeeTestCloud for the entered Query from all the devices(the user has access to).
+        /// </summary>
+        /// <param name="SearchQuery">Dictionary that contains "Keys" as Key and "string" as value. e.g input.Add(Keys.deviceName,"myphone"),input.Add(Keys.agentLocation,"Bangalore")</param>
+        public List<int> GetDeviceIDList(Dictionary<Keys, string> SearchQuery)
+        {
+            List<string> deviceIDListString = new List<string>();
+            List<int> deviceIDsListInt = new List<int>();
+            deviceIDListString = GetListValueFromAllDevicesByQuery(SearchQuery, "id");
+            for (int i = 0; i < deviceIDListString.Count; i++)
+            {
+                deviceIDsListInt.Add(int.Parse(deviceIDListString[i]));
+            }
+            return deviceIDsListInt;
         }
 
 
@@ -427,6 +536,30 @@ namespace SeeTestCloudAPI
             return Execute(request);
         }
 
+        /// <summary>
+        /// Start web access control of the device. When choosing 'Debug' option - Grid must run (from the same user who ran the API).
+        /// <para>This API is available only for cloud admin. Returns the response as string which has the link</para>
+        /// </summary>
+        /// <param name="DeviceID">Enter Unique Device ID assigned by SeeTestCloud. Use GetDeviceID()/PrintAllDevicesImportantInformation() method first to get ID of a device.</param>
+        /// <param name="Type">Type ControlType. -> will get list of available options. Select from the list. e.g. ControlType.DEBUG</param>
+        /// <param name="webControlLinkType">Type WebControlLinkType. -> will get list of available options. Select from the list. e.g. WebControlLinkType.regularLink or WebControlLinkType.externalLink</param>
+        public string StartWebControl(int DeviceID, ControlType Type, WebControlLinkType webControlLinkType)
+        {
+            URL = CloudServer + "/api/v1/devices/" + DeviceID + "/web-control";
+            var request = ReturnRequest(URL, Method.PUT);
+            request.AddParameter("type", (int)Type);
+            string response = Execute(request);
+            string url = null;
+            if (webControlLinkType == WebControlLinkType.regularLink)
+            {
+                url = ParseResponse(response, WebControlLinkType.regularLink.ToString());
+            }
+            if (webControlLinkType == WebControlLinkType.externalLink)
+            {
+                url = ParseResponse(response, WebControlLinkType.externalLink.ToString());
+            }
+            return url;
+        }
 
         /// <summary>
         /// Start web access control of the device. When choosing 'Debug' option - Grid must run (from the same user who ran the API).
@@ -442,6 +575,33 @@ namespace SeeTestCloudAPI
             request.AddParameter("type", Type);
             request.AddParameter("emulatorInstanceName", EmulatorInstanceName);
             return Execute(request);
+        }
+
+        /// <summary>
+        /// Start web access control of the device. When choosing 'Debug' option - Grid must run (from the same user who ran the API).
+        /// <para>This API is available only for cloud admin. Returns the response as string which has the link</para>
+        /// </summary>
+        /// <param name="DeviceID">Enter Unique Device ID assigned by SeeTestCloud. Use GetDeviceID()/PrintAllDevicesImportantInformation() method first to get ID of a device.</param>
+        /// <param name="Type">Type ControlType. -> will get list of available options. Select from the list. e.g. ControlType.DEBUG</param>
+        /// <param name="EmulatorInstanceName">Enter Name for the emulator.</param>
+        /// <param name="webControlLinkType">Type WebControlLinkType. -> will get list of available options. Select from the list. e.g. WebControlLinkType.regularLink or WebControlLinkType.externalLink</param>
+        public string StartWebControl(int DeviceID, ControlType Type, string EmulatorInstanceName, WebControlLinkType webControlLinkType)
+        {
+            URL = CloudServer + "/api/v1/devices/" + DeviceID + "/web-control";
+            var request = ReturnRequest(URL, Method.PUT);
+            request.AddParameter("type", (int)Type);
+            request.AddParameter("emulatorInstanceName", EmulatorInstanceName);
+            string response = Execute(request);
+            string url = null;
+            if (webControlLinkType == WebControlLinkType.regularLink)
+            {
+                url = ParseResponse(response, WebControlLinkType.regularLink.ToString());
+            }
+            if (webControlLinkType == WebControlLinkType.externalLink)
+            {
+                url = ParseResponse(response, WebControlLinkType.externalLink.ToString());
+            }
+            return url;
         }
 
         /// <summary>
@@ -1097,5 +1257,20 @@ namespace SeeTestCloudAPI
         /// Pass the OS Type as iOS
         /// </summary>
         iOS = 1
+    }
+
+    /// <summary>
+    /// Type of Web control link. regularLink,externalLink.
+    /// </summary>
+    public enum WebControlLinkType
+    {
+        /// <summary>
+        /// Pass the Web Control Type as Regular Link
+        /// </summary>
+        regularLink = 0,
+        /// <summary>
+        ///Pass the Web Control Type as External Link
+        /// </summary>
+        externalLink = 1
     }
 }

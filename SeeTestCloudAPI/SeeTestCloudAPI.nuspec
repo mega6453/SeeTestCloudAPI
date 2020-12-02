@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>SeeTestCloudAPI</id>
-    <version>1.0.0</version>
+    <version>1.2.0</version>
     <authors>Meganathan</authors>
     <owners>Meganathan</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -12,7 +12,7 @@
     <title>SeeTest Cloud API</title>
     <description>Library to Manage Mobile Devices hosted in SeeTest Cloud.</description>
     <projectUrl>https://github.com/mega6453/SeeTestCloudAPI</projectUrl>
-    <releaseNotes>Initial Release - Devices Rest API Methods</releaseNotes>
+    <releaseNotes>Added few more methods to Get Device IDs</releaseNotes>
     <copyright>Copyright © Meganathan 2020</copyright>
     <tags>seetest, seetestcloud, experitest, experitestcloud, automation, cloudautomation, mobileautomation</tags>
     <dependencies>
